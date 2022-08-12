@@ -23,7 +23,7 @@ export default {
   //background: $color-purple;
   //color: $color-white;
   max-width: 1440px;
-  min-width: 360px;
+  min-width: 320px;
   min-height: 100vh;
   margin: 0 auto;
 }
