@@ -1,5 +1,5 @@
 <template>
-  <div class="cards">
+  <section class="cards">
     <article class="card">
       <div class="card__header">
         <img src="../assets/images/cat-back.svg" alt="" />
@@ -29,7 +29,7 @@
         <img src="../assets/images/icon.svg" alt="" />
       </a>
     </article>
-  </div>
+  </section>
 </template>
 
 <script>

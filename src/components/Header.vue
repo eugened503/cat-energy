@@ -1,6 +1,13 @@
 <template>
   <header class="header">
-    <img class="header__logo" src="../assets/images/logo-mobile.svg" alt="" />
+    <a class="header__link" href="#">
+      <img
+        class="header__link-logo"
+        src="../assets/images/logo-mobile.svg"
+        alt=""
+      />
+    </a>
+
     <img class="header__logo" src="../assets/images/logo-2.svg" alt="" />
     <button class="header__button">
       <img
