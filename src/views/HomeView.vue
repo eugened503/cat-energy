@@ -5,7 +5,6 @@
     <Instruction />
     <Demo />
     <Cooperation />
-    <Footer />
   </div>
 </template>
 
@@ -15,9 +14,8 @@ import Cards from "@/components/Cards.vue";
 import Instruction from "@/components/Instruction.vue";
 import Demo from "@/components/Demo.vue";
 import Cooperation from "@/components/Cooperation.vue";
-import Footer from "@/components/Footer.vue";
 export default {
   name: "HomeView",
-  components: { Banner, Cards, Instruction, Demo, Cooperation, Footer },
+  components: { Banner, Cards, Instruction, Demo, Cooperation },
 };
 </script>
