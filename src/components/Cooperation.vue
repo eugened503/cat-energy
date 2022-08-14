@@ -6,7 +6,7 @@
         ул. Большая Конюшенная, д. 19/8 Санкт-Петербург
       </p>
     </div>
-    <yandex-map :zoom="11" :coords="coords">
+    <yandex-map :zoom="11" :coords="coords" :behaviors="behaviors">
       <ymap-marker :icon="markerIcon" :coords="coords" marker-id="1" />
     </yandex-map>
   </section>
@@ -18,6 +18,12 @@ export default {
   data: function () {
     return {
       coords: [59.938635, 30.323118],
+      behaviors: [
+        "drag",
+        "dblClickZoom",
+        "rightMouseButtonMagnifier",
+        "multiTouch",
+      ],
       markerIcon: {
         layout: "default#imageWithContent",
         imageHref: require("../assets/images/map.png"),
