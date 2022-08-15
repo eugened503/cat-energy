@@ -7,6 +7,16 @@ const routes = [
     name: "home",
     component: HomeView,
   },
+  {
+    path: "/catalog",
+    name: "catalog",
+    component: "",
+  },
+  {
+    path: "/form",
+    name: "form",
+    component: "",
+  },
 ];
 
 const router = createRouter({
