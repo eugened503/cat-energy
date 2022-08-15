@@ -66,7 +66,7 @@ export default {
   }
 
   &__link {
-    display: block;
+    display: inline-block;
     @media screen and (min-width: 0) {
       font-size: 18px;
       line-height: 25px;
