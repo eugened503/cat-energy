@@ -56,13 +56,6 @@ export default {
 
     @media screen and (min-width: $laptop-big) {
     }
-
-    &:last-child {
-      border-bottom: 1px solid #e6e6e6;
-      @media screen and (min-width: $tablet) {
-        border: none;
-      }
-    }
   }
 
   &__link {
@@ -89,5 +82,13 @@ export default {
 .router-link-active,
 .router-link-exact-active {
   border-bottom: 2px solid $color-green;
+
+  @media screen and (min-width: 0) {
+    border-bottom: 2px solid $color-green;
+  }
+
+  @media screen and (min-width: $laptop-big) {
+    border-bottom: 2px solid $color-white;
+  }
 }
 </style>

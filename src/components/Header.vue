@@ -25,7 +25,11 @@
       <button class="header__button" @click="toggleMenu">
         <img
           class="header__button-image"
-          src="../assets/images/btn-image.svg"
+          :src="
+            !menuOpen
+              ? require('../assets/images/btn-image.svg')
+              : require('../assets/images/close.svg')
+          "
           alt=""
         />
       </button>
@@ -53,33 +57,11 @@ export default {
       this.menuOpen = !this.menuOpen;
     },
   },
-
-  watch: {
-    menuOpen() {
-      if (this.menuOpen) {
-        document.body.style.overflow = "hidden";
-        return;
-      }
-
-      document.body.style.overflow = "auto";
-    },
-  },
 };
 </script>
 
 <style lang="scss">
 .header {
-  //overflow: hidden;
-
-  @media screen and (min-width: $mobile-small) {
-  }
-
-  @media screen and (min-width: $tablet) {
-  }
-
-  @media screen and (min-width: $laptop-big) {
-  }
-
   &__wrapper {
     display: flex;
     align-items: center;
@@ -154,6 +136,11 @@ export default {
     @media screen and (min-width: $tablet) {
       display: none;
     }
+  }
+
+  &__button-image {
+    width: 24px;
+    height: 18px;
   }
 }
 
