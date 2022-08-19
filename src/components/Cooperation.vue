@@ -1,9 +1,12 @@
 <template>
   <section class="cooperation">
-    <div class="cooperation__inner">
+    <div class="container-desk container cooperation__inner">
       <h2 class="cooperation__title">приглашаем к сотрудничеству дилеров!</h2>
       <p class="cooperation__address">
-        ул. Большая Конюшенная, д. 19/8 Санкт-Петербург
+        <span class="cooperation__address-text"
+          >ул. Большая Конюшенная, д. 19/8</span
+        >
+        <span class="cooperation__address-text">Санкт-Петербург</span>
       </p>
     </div>
     <yandex-map :zoom="11" :coords="coords" :behaviors="behaviors">
@@ -37,21 +40,107 @@ export default {
 
 <style lang="scss">
 .cooperation {
-  @media screen and (min-width: $mobile-small) {
-    //width: 900px;
+  position: relative;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (min-width: 0) {
+      padding-top: 28px;
+      padding-bottom: 22px;
+    }
+
+    @media screen and (min-width: $tablet) {
+      padding-top: 66px;
+      padding-bottom: 51px;
+    }
+
+    @media screen and (min-width: $laptop-big) {
+      position: absolute;
+      top: 95px;
+      left: 105px;
+      width: 570px;
+      background: $color-white;
+      z-index: 1;
+    }
   }
 
-  @media screen and (min-width: $tablet) {
-    //width: 900px;
+  &__title {
+    text-transform: uppercase;
+
+    @media screen and (min-width: 0) {
+      font-size: 16px;
+      line-height: 18px;
+      width: 40%;
+    }
+
+    @media screen and (min-width: $tablet) {
+      font-size: 20px;
+      line-height: 21px;
+      width: 30%;
+    }
+
+    @media screen and (min-width: $laptop-big) {
+      width: 40%;
+    }
   }
 
-  @media screen and (min-width: $laptop-big) {
-    //width: 900px;
+  &__address {
+    @media screen and (min-width: 0) {
+      width: 50%;
+    }
+
+    @media screen and (min-width: $laptop-big) {
+      width: percentage(155/405);
+    }
+  }
+
+  &__address-text {
+    display: block;
+    font-family: "Arial";
+    font-style: normal;
+    font-weight: 400;
+    color: #444444;
+
+    &:last-child {
+      @media screen and (min-width: $tablet) {
+        margin: 16px 0 0;
+      }
+    }
+
+    @media screen and (min-width: 0) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    @media screen and (min-width: $tablet) {
+      text-align: right;
+      font-size: 16px;
+    }
+
+    @media screen and (min-width: $laptop-big) {
+      text-align: left;
+    }
   }
 
   .ymap-container {
     width: 100%;
-    height: 362px;
+
+    @media screen and (min-width: 0) {
+      height: 362px;
+    }
+
+    @media screen and (min-width: $tablet) {
+      height: 400px;
+    }
+  }
+
+  .container-desk {
+    @media screen and (min-width: $laptop-big) {
+      padding: 66px 89px 51px 76px;
+    }
   }
 }
 </style>
