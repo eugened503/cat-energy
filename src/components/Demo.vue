@@ -1,40 +1,56 @@
 <template>
   <section class="container demo">
-    <h2 class="demo__title">Живой пример</h2>
-    <p class="demo__desc">
-      Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на Cat
-      Energy Slim. Отличный результат без изнуряющих тренировок! При этом он не
-      менял своих привычек и по-прежнему спит по 16 часов в день.
-    </p>
-    <div class="stats-wrapper">
-      <div class="stats">
-        <div class="stats__item">
-          <h3 class="stats__title">5 КГ</h3>
-          <p class="stats__subtitle">снижение веса</p>
+    <div class="demo__info-block">
+      <h2 class="demo__title">Живой пример</h2>
+      <p class="demo__desc">
+        Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на Cat
+        Energy Slim. Отличный результат без изнуряющих тренировок! При этом он
+        не менял своих привычек и по-прежнему спит по 16 часов в день.
+      </p>
+      <div class="stats-wrapper">
+        <div class="stats">
+          <div class="stats__item">
+            <h3 class="stats__title">5 КГ</h3>
+            <p class="stats__subtitle">снижение веса</p>
+          </div>
+          <div class="stats__item">
+            <h3 class="stats__title">60 ДНЕЙ</h3>
+            <p class="stats__subtitle">затрачено времени</p>
+          </div>
         </div>
-        <div class="stats__item">
-          <h3 class="stats__title">60 ДНЕЙ</h3>
-          <p class="stats__subtitle">затрачено времени</p>
-        </div>
+        <p class="stats-wrapper__caption">
+          <span> Затраты на питание:</span>
+          <span>15 000 РУБ.</span>
+        </p>
       </div>
-      <p class="demo__caption">Затраты на питание: 15 000 РУБ.</p>
     </div>
-    <div class="wrapper">
-      <input type="range" min="0" max="100" step="1" v-model="value" />
-    </div>
-    <div class="demo__list-tab">
-      <div
-        class="demo__image-tab"
-        :style="{
-          width: total + '%',
-        }"
-      />
-      <div
-        class="demo__image-tab"
-        :style="{
-          width: value + '%',
-        }"
-      />
+    <div class="demo__list-tab-wrapper">
+      <div class="demo__list-tab">
+        <div
+          class="demo__image-tab"
+          :style="{
+            width: total + '%',
+          }"
+        />
+        <div
+          class="demo__image-tab"
+          :style="{
+            width: value + '%',
+          }"
+        />
+      </div>
+      <div class="demo__range-wrapper">
+        <span class="progress-title">было</span>
+        <input
+          class="demo__range"
+          type="range"
+          min="0"
+          max="100"
+          step="1"
+          v-model="value"
+        />
+        <span class="progress-title">стало</span>
+      </div>
     </div>
     <div name="list" class="demo__list">
       <img
@@ -51,13 +67,14 @@
       />
     </div>
     <div class="progress">
-      <span>было</span>
+      <span class="progress-title">было</span>
       <label class="switch">
         <input type="checkbox" v-model="checked" />
         <span class="slider round"></span>
       </label>
-      <span>стало</span>
+      <span class="progress-title">стало</span>
     </div>
+    <div class="demo__inner" />
   </section>
 </template>
 
@@ -81,6 +98,7 @@ export default {
 
 <style lang="scss">
 .demo {
+  position: relative;
   @media screen and (min-width: 0) {
     padding-top: 27px;
     padding-bottom: 31px;
@@ -89,11 +107,20 @@ export default {
 
   @media screen and (min-width: $tablet) {
     padding-top: 43px;
-    padding-bottom: 70px;
+    padding-bottom: 68px;
     background: inherit;
   }
 
   @media screen and (min-width: $laptop-big) {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 67px;
+  }
+
+  &__info-block {
+    @media screen and (min-width: $laptop-big) {
+      width: percentage(435/1220);
+    }
   }
 
   &__title {
@@ -107,9 +134,6 @@ export default {
     @media screen and (min-width: $tablet) {
       font-size: 60px;
       line-height: 60px;
-    }
-
-    @media screen and (min-width: $laptop-big) {
     }
   }
 
@@ -132,71 +156,90 @@ export default {
     }
 
     @media screen and (min-width: $laptop-big) {
+      margin: 146px 0 0;
     }
   }
 
-  &__caption {
-    text-transform: uppercase;
-    text-align: center;
-    @media screen and (min-width: 0) {
-      margin: 34px 0 0;
-      font-size: 14px;
-      line-height: 20px;
-    }
-
-    @media screen and (min-width: $tablet) {
-      margin: 0;
-      font-size: 20px;
-      line-height: 20px;
-      max-width: 174px;
-      text-align: right;
-    }
-
-    @media screen and (min-width: $laptop-big) {
-    }
-  }
-
-  &__list-tab {
-    position: relative;
-    width: 610px;
-    height: 465px;
-    margin: 0 auto;
+  &__list-tab-wrapper {
     @media screen and (min-width: 0) {
       display: none;
     }
 
     @media screen and (min-width: $tablet) {
       display: block;
+      width: 610px;
+      margin: 51px auto 0;
+    }
+
+    @media screen and (min-width: $laptop-big) {
+      width: 590px;
+      margin: 0 -80px 0 auto;
+      padding: 0;
+    }
+  }
+
+  &__list-tab {
+    @media screen and (min-width: 0) {
+      display: none;
+    }
+
+    @media screen and (min-width: $tablet) {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 465px;
+      margin: 0 auto;
     }
   }
 
   &__image-tab {
-    //min-height: 620px;
     position: absolute;
 
     &:first-child {
       height: 100%;
       background: url(../assets/images/before-tablet@2x.png);
-      //background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-      //background-size: 311px 323px;
       z-index: 2;
     }
+
     &:last-child {
-      //display: none;
       height: 100%;
       background: url(../assets/images/after-tablet@2x.png);
-      //background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
       background-position-x: -11px;
-      //direction: rtl;
       transform: scaleX(-1);
       left: auto;
       right: 0;
-      //background-size: 311px 323px;
       z-index: 1;
+    }
+  }
+
+  &__range-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 13px 0 0;
+  }
+
+  &__range {
+    display: block;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    margin: 0 20px 0 24px;
+    background-color: #dcdcdc;
+    cursor: pointer;
+
+    &::-webkit-slider-thumb {
+      width: 34px;
+      height: 34px;
+      -webkit-appearance: none;
+      background: $color-white;
+      border: 1px solid #cdcdcd;
+      border-radius: 50%;
+      cursor: pointer;
     }
   }
 
@@ -213,16 +256,41 @@ export default {
 
   &__image {
     display: block;
+    height: 100%;
+    margin: 0 auto;
+  }
 
+  &__inner {
     @media screen and (min-width: 0) {
-      height: 100%;
-      margin: 0 auto;
+      display: none;
     }
 
     @media screen and (min-width: $tablet) {
+      display: block;
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 462px;
+      background-image: linear-gradient(
+        to right,
+        #f2f2f2 0,
+        #f2f2f2 50%,
+        #e9e9e9 50%,
+        #e9e9e9 100%
+      );
     }
 
     @media screen and (min-width: $laptop-big) {
+      height: 462px;
+      background-image: linear-gradient(
+        to right,
+        #f2f2f2 0,
+        #f2f2f2 calc(100% - 325px),
+        #e9e9e9 calc(100% - 325px),
+        #e9e9e9 100%
+      );
     }
   }
 
@@ -235,6 +303,36 @@ export default {
     }
 
     @media screen and (min-width: $laptop-big) {
+      display: block;
+      margin: 69px 0 0;
+    }
+
+    &__caption {
+      text-transform: uppercase;
+
+      @media screen and (min-width: 0) {
+        margin: 34px 0 0;
+        font-size: 14px;
+        line-height: 20px;
+        text-align: center;
+      }
+
+      @media screen and (min-width: $tablet) {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        font-size: 20px;
+        line-height: 20px;
+        max-width: 174px;
+        text-align: right;
+      }
+
+      @media screen and (min-width: $laptop-big) {
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 60px 0 0;
+        max-width: none;
+      }
     }
   }
 
@@ -249,6 +347,10 @@ export default {
     @media screen and (min-width: $tablet) {
       margin: 0;
       width: percentage(366/708);
+    }
+
+    @media screen and (min-width: $laptop-big) {
+      width: 100%;
     }
 
     &__item {
@@ -268,6 +370,7 @@ export default {
       }
 
       @media screen and (min-width: $laptop-big) {
+        width: calc(50% - 21px);
       }
 
       &:last-child {
@@ -289,9 +392,6 @@ export default {
         font-size: 30px;
         line-height: 37px;
       }
-
-      @media screen and (min-width: $laptop-big) {
-      }
     }
 
     &__subtitle {
@@ -299,13 +399,13 @@ export default {
       margin: 0 auto;
       left: 0;
       right: 0;
-      bottom: -14px;
       font-family: "Arial";
       font-style: normal;
       font-weight: 400;
       color: #444444;
 
       @media screen and (min-width: 0) {
+        bottom: -14px;
         font-size: 12px;
         line-height: 12px;
         max-width: 87px;
@@ -316,12 +416,12 @@ export default {
       @media screen and (min-width: $tablet) {
         bottom: -6px;
         max-width: 114px;
-        white-space: nowrap;
         padding: 0;
         background: $color-white;
       }
 
       @media screen and (min-width: $laptop-big) {
+        background: #f2f2f2;
       }
     }
   }
@@ -336,6 +436,21 @@ export default {
 
     @media screen and (min-width: $tablet) {
       display: none;
+    }
+  }
+
+  .progress-title {
+    text-transform: uppercase;
+
+    @media screen and (min-width: 0) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    @media screen and (min-width: $tablet) {
+      font-size: 20px;
+      line-height: 30px;
+      border-bottom: 1px dotted #bebebe;
     }
   }
 
@@ -386,14 +501,6 @@ export default {
 
   .slider.round:before {
     border-radius: 6px;
-  }
-
-  .wrapper {
-    margin: 30px 0 0;
-    p {
-      height: 30px;
-      border: 1px solid red;
-    }
   }
 }
 </style>

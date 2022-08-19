@@ -64,7 +64,7 @@ export default {
 
   @media screen and (min-width: $laptop-big) {
     margin: 71px 0 0;
-    padding-bottom: 208px;
+    padding-bottom: 0;
     border-bottom: none;
   }
 
