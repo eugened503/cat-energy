@@ -138,6 +138,9 @@ export default {
   }
 
   .container-desk {
+    @media screen and (min-width: $tablet) {
+      padding: 63px 41px 59px;
+    }
     @media screen and (min-width: $laptop-big) {
       padding: 66px 89px 51px 76px;
     }
