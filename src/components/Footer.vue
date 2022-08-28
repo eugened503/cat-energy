@@ -1,8 +1,14 @@
 <template>
   <footer class="container footer">
-    <a class="footer__link" href="#">
-      <img class="footer__logo" src="../assets/images/footer-logo.svg" alt="" />
-    </a>
+    <div class="footer__link-wrapper">
+      <a class="footer__link" href="#">
+        <img
+          class="footer__logo"
+          src="../assets/images/footer-logo.svg"
+          alt=""
+        />
+      </a>
+    </div>
 
     <div class="footer__social-wrapper">
       <ul class="footer__social">
@@ -51,22 +57,44 @@ export default {
 
 <style lang="scss">
 .footer {
+  @media screen and (min-width: 0) {
+    //display: flex;
+    //flex-direction: column;
+  }
+
   @media screen and (min-width: $tablet) {
     display: flex;
+    //flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding-top: 55px;
     padding-bottom: 61px;
   }
 
+  &__link-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (min-width: 0) {
+      border-bottom: 1px solid #d9d9d9;
+    }
+
+    @media screen and (min-width: $tablet) {
+      display: flex;
+      border: none;
+    }
+  }
+
   &__link {
-    display: block;
-    text-align: center;
+    //display: inline-block;
+    //display: block;
+    //text-align: center;
 
     @media screen and (min-width: 0) {
       margin: 39px 0 0;
       padding: 0 0 32px;
-      border-bottom: 1px solid #d9d9d9;
+      //border-bottom: 1px solid #d9d9d9;
     }
 
     @media screen and (min-width: $tablet) {
