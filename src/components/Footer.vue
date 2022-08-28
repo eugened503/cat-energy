@@ -57,14 +57,8 @@ export default {
 
 <style lang="scss">
 .footer {
-  @media screen and (min-width: 0) {
-    //display: flex;
-    //flex-direction: column;
-  }
-
   @media screen and (min-width: $tablet) {
     display: flex;
-    //flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding-top: 55px;
@@ -87,14 +81,9 @@ export default {
   }
 
   &__link {
-    //display: inline-block;
-    //display: block;
-    //text-align: center;
-
     @media screen and (min-width: 0) {
       margin: 39px 0 0;
       padding: 0 0 32px;
-      //border-bottom: 1px solid #d9d9d9;
     }
 
     @media screen and (min-width: $tablet) {
