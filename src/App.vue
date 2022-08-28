@@ -3,14 +3,16 @@
   <main class="main">
     <router-view />
   </main>
+  <Cooperation />
   <Footer />
 </template>
 <script>
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
+import Cooperation from "@/components/Cooperation.vue";
 export default {
   name: "App",
-  components: { Header, Footer },
+  components: { Header, Footer, Cooperation },
 };
 </script>
 
