@@ -12,7 +12,7 @@
         </router-link>
       </li>
       <li class="menu__item">
-        <router-link class="menu__link" to="/form" @click="menuClose">
+        <router-link class="menu__link" to="/selection" @click="menuClose">
           подбор программы
         </router-link>
       </li>

@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import CatalogView from "../views/CatalogView.vue";
+import SelectionView from "../views/SelectionView.vue";
 
 const routes = [
   {
@@ -14,9 +15,9 @@ const routes = [
     component: CatalogView,
   },
   {
-    path: "/form",
-    name: "form",
-    component: "",
+    path: "/selection",
+    name: "selection",
+    component: SelectionView,
   },
 ];
 
