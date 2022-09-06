@@ -59,9 +59,6 @@ export default {
     justify-content: space-between;
   }
 
-  @media screen and (min-width: $laptop-big) {
-  }
-
   &__item {
     @media screen and (min-width: 0) {
       padding: 20px 0;
@@ -72,9 +69,6 @@ export default {
     @media screen and (min-width: $tablet) {
       padding: 0;
       border: none;
-    }
-
-    @media screen and (min-width: $laptop-big) {
     }
   }
 
