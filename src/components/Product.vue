@@ -3,7 +3,6 @@
     <div class="product__title-wrapper">
       <h1 class="product__title">Каталог продукции</h1>
     </div>
-
     <div class="product-cards">
       <article class="product-card" v-for="item in items" :key="item.id">
         <div class="product-card__body">

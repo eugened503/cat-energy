@@ -2,17 +2,32 @@
   <nav>
     <ul class="menu">
       <li class="menu__item">
-        <router-link class="menu__link" to="/" @click="menuClose">
+        <router-link
+          class="menu__link"
+          :class="{ catalogLink: styleLink }"
+          to="/"
+          @click="menuClose"
+        >
           главная
         </router-link>
       </li>
       <li class="menu__item">
-        <router-link class="menu__link" to="/catalog" @click="menuClose">
+        <router-link
+          class="menu__link"
+          :class="{ catalogLink: styleLink }"
+          to="/catalog"
+          @click="menuClose"
+        >
           каталог продукции
         </router-link>
       </li>
       <li class="menu__item">
-        <router-link class="menu__link" to="/selection" @click="menuClose">
+        <router-link
+          class="menu__link"
+          :class="{ catalogLink: styleLink }"
+          to="/selection"
+          @click="menuClose"
+        >
           подбор программы
         </router-link>
       </li>
@@ -26,6 +41,11 @@ export default {
   methods: {
     menuClose() {
       this.$emit("menu-close");
+    },
+  },
+  computed: {
+    styleLink() {
+      return this.$route.name != "home";
     },
   },
 };
@@ -77,6 +97,10 @@ export default {
       color: $color-white;
     }
   }
+
+  .catalogLink {
+    color: $color-black;
+  }
 }
 
 .router-link-active,
@@ -89,6 +113,10 @@ export default {
 
   @media screen and (min-width: $laptop-big) {
     border-bottom: 2px solid $color-white;
+  }
+
+  &.catalogLink {
+    border-bottom: 2px solid $color-green;
   }
 }
 </style>
