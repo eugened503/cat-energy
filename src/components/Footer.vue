@@ -1,5 +1,5 @@
 <template>
-  <footer class="container footer">
+  <footer class="container footer" :class="{ catalogLink: styleLink }">
     <div class="footer__link-wrapper">
       <a class="footer__link" href="#">
         <img
@@ -52,11 +52,21 @@ export default {
       ],
     };
   },
+
+  computed: {
+    styleLink() {
+      return this.$route.name != "home";
+    },
+  },
 };
 </script>
 
 <style lang="scss">
 .footer {
+  &.catalogLink {
+    background: #f2f2f2;
+  }
+
   @media screen and (min-width: $tablet) {
     display: flex;
     justify-content: space-between;

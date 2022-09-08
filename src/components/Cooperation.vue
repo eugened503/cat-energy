@@ -1,6 +1,9 @@
 <template>
   <section class="cooperation">
-    <div class="container-desk container cooperation__inner">
+    <div
+      class="container-desk container cooperation__inner"
+      :class="{ catalogLink: styleLink }"
+    >
       <h2 class="cooperation__title">приглашаем к сотрудничеству дилеров!</h2>
       <p class="cooperation__address">
         <span class="cooperation__address-text"
@@ -18,7 +21,7 @@
 <script>
 export default {
   name: "CooperationBlock",
-  data: function () {
+  data() {
     return {
       coords: [59.938635, 30.323118],
       behaviors: [
@@ -35,12 +38,28 @@ export default {
       },
     };
   },
+
+  computed: {
+    styleLink() {
+      return this.$route.name != "home";
+    },
+  },
 };
 </script>
 
 <style lang="scss">
 .cooperation {
   position: relative;
+
+  .catalogLink {
+    @media screen and (min-width: 0) {
+      background: #f2f2f2;
+    }
+
+    @media screen and (min-width: $laptop-big) {
+      background: $color-white;
+    }
+  }
 
   &__inner {
     display: flex;

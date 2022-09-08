@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <div class="container header__wrapper">
-      <a class="header__link" href="#">
+      <router-link to="/" class="header__link">
         <img
           class="header__logo-mb"
           src="../assets/images/logo-mobile.svg"
@@ -17,7 +17,7 @@
           src="../assets/images/logo-desktop.svg"
           alt=""
         />
-      </a>
+      </router-link>
 
       <img class="header__logo" src="../assets/images/logo-2.svg" alt="" />
 
@@ -78,6 +78,11 @@ export default {
 
     @media screen and (min-width: $laptop-big) {
       padding-top: 51px;
+    }
+
+    .router-link-active,
+    .router-link-exact-active {
+      border-bottom: none;
     }
 
     .menu-desktop {

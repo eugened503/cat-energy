@@ -35,7 +35,7 @@
             </div>
           </div>
         </div>
-        <button class="product-card__button">заказать</button>
+        <button class="button">заказать</button>
       </article>
       <article class="product-card card-foot">
         <img
@@ -45,9 +45,7 @@
         />
         <h3 class="card-foot__title">Показать еще 100500 товаров</h3>
         <p class="card-foot__text">На самом деле вкусов гораздо больше!</p>
-        <button class="product-card__button foot-button" type="button">
-          Показать все
-        </button>
+        <button class="button foot-button" type="button">Показать все</button>
       </article>
     </div>
   </section>
@@ -180,6 +178,16 @@ export default {
     margin: 0 0 143px;
   }
 
+  &:nth-last-child(-n + 2) {
+    margin: 0;
+  }
+
+  &:nth-last-child(-n + 4) {
+    @media screen and (min-width: $laptop-big) {
+      margin: 0;
+    }
+  }
+
   &__body {
     @media screen and (min-width: 0) {
       display: flex;
@@ -265,23 +273,13 @@ export default {
     }
   }
 
-  &__button {
-    width: 100%;
-    text-align: center;
-    font-size: 16px;
-    color: $color-white;
-    background: $color-green;
-
+  .button {
     @media screen and (min-width: 0) {
       margin: 22px 0 0;
-      padding: 8px 0;
-      line-height: 16px;
     }
 
     @media screen and (min-width: $tablet) {
       margin: 33px 0 0;
-      padding: 9.5px 0;
-      line-height: 20px;
     }
   }
 }

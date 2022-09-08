@@ -22,15 +22,5 @@ export default {
   min-width: 320px;
   min-height: 100vh;
   margin: 0 auto;
-  //background: $color-purple;
-}
-
-.main {
-  //background: $color-purple;
-  //color: $color-white;
-  //max-width: 1440px;
-  //min-width: 320px;
-  ///min-height: 100vh;
-  //margin: 0 auto;
 }
 </style>
