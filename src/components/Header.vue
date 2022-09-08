@@ -82,7 +82,9 @@ export default {
 
     .router-link-active,
     .router-link-exact-active {
-      border-bottom: none;
+      &.header__link {
+        border-bottom: none;
+      }
     }
 
     .menu-desktop {
