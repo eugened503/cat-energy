@@ -15,3 +15,19 @@ export default {
   components: { Form },
 };
 </script>
+<style lang="scss">
+.selection {
+  &__title {
+    margin: 27px 0 0;
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  &__text {
+    margin: 37px 0 0;
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: uppercase;
+  }
+}
+</style>
