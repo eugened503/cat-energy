@@ -69,7 +69,7 @@ export default {
     @media screen and (min-width: $tablet) {
       padding: 0;
       border: none;
-      min-height: 42px;
+      height: 42px;
     }
   }
 
