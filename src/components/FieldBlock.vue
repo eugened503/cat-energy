@@ -30,9 +30,7 @@ export default {
   }
 
   @media screen and (min-width: $tablet) {
-  }
-
-  @media screen and (min-width: $laptop-big) {
+    margin: 20px 0 0;
   }
 
   &:first-child {
@@ -49,15 +47,13 @@ export default {
     }
 
     @media screen and (min-width: $tablet) {
-    }
-
-    @media screen and (min-width: $laptop-big) {
+      font-size: 20px;
+      line-height: 30px;
     }
   }
 
   &__text-field {
     flex: 1;
-    text-transform: uppercase;
     color: #444444;
     border: 1px solid #e7e7e7;
     @media screen and (min-width: 0) {
@@ -67,9 +63,12 @@ export default {
     }
 
     @media screen and (min-width: $tablet) {
+      font-size: 18px;
     }
 
-    @media screen and (min-width: $laptop-big) {
+    &::placeholder {
+      text-transform: uppercase;
+      color: #444444;
     }
   }
 
@@ -79,12 +78,6 @@ export default {
     transform: translateY(-50%);
     @media screen and (min-width: 0) {
       right: 10px;
-    }
-
-    @media screen and (min-width: $tablet) {
-    }
-
-    @media screen and (min-width: $laptop-big) {
     }
   }
 }

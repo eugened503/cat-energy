@@ -17,17 +17,53 @@ export default {
 </script>
 <style lang="scss">
 .selection {
+  @media screen and (min-width: 0) {
+    border-top: 1px solid #d9d9d9;
+  }
+
+  @media screen and (min-width: $tablet) {
+    border: none;
+  }
+
+  @media screen and (min-width: $laptop-big) {
+  }
+
   &__title {
-    margin: 27px 0 0;
-    font-size: 36px;
-    line-height: 36px;
+    @media screen and (min-width: 0) {
+      margin: 27px 0 0;
+      font-size: 36px;
+      line-height: 36px;
+    }
+
+    @media screen and (min-width: $tablet) {
+      margin: 64px 0 0;
+      font-size: 60px;
+      line-height: 60px;
+    }
+
+    @media screen and (min-width: $laptop-big) {
+      margin: 73px 0 0;
+    }
   }
 
   &__text {
-    margin: 37px 0 0;
-    font-size: 14px;
-    line-height: 18px;
     text-transform: uppercase;
+    @media screen and (min-width: 0) {
+      margin: 37px 0 0;
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    @media screen and (min-width: $tablet) {
+      max-width: 332px;
+      margin: 54px 0 0 40px;
+      font-size: 20px;
+      line-height: 30px;
+    }
+
+    @media screen and (min-width: $laptop-big) {
+      margin: 54px 0 0;
+    }
   }
 }
 </style>
