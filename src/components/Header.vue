@@ -142,6 +142,10 @@ export default {
   }
 
   &__button {
+    &:hover {
+      background: none;
+    }
+
     @media screen and (min-width: $tablet) {
       display: none;
     }
