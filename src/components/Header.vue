@@ -167,13 +167,21 @@ export default {
   @media screen and (min-width: $tablet) {
     display: none;
   }
+
+  .menu {
+    height: 0;
+  }
 }
 
 .dropdown-after {
   @media screen and (min-width: 0) {
-    height: 196px;
+    height: 199px;
     opacity: 1;
-    transition: height 0.5s, opacity 1s;
+    transition: height 0.5s, opacity 1.5s;
+  }
+
+  .menu {
+    height: 100%;
   }
 }
 </style>
