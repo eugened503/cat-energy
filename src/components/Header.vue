@@ -173,7 +173,7 @@ export default {
   @media screen and (min-width: 0) {
     height: 200px;
     opacity: 1;
-    transition: height 0.5s, opacity 1.5s;
+    transition: height 0.5s, opacity 1s;
   }
 }
 </style>
