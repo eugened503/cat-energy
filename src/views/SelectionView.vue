@@ -25,9 +25,6 @@ export default {
     border: none;
   }
 
-  @media screen and (min-width: $laptop-big) {
-  }
-
   &__title {
     @media screen and (min-width: 0) {
       margin: 27px 0 0;

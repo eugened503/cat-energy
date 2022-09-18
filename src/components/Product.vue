@@ -345,6 +345,16 @@ export default {
   .foot-button {
     color: $color-black;
     background: #f2f2f2;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: #ebebeb;
+    }
+
+    &:active {
+      background: #ebebeb;
+      color: #b9b9b9;
+    }
 
     @media screen and (min-width: $tablet) {
       margin: 96px 0 0;

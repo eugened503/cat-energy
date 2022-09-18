@@ -1,6 +1,11 @@
 <template>
   <section class="container banner">
-    <img class="banner__bg-image" src="../assets/images/bg-mobile.jpg" alt="" />
+    <img class="banner__bg-desc" src="../assets/images/bg-desktop.jpg" alt="" />
+    <img
+      class="banner__bg-mobile"
+      src="../assets/images/bg-mobile.jpg"
+      alt=""
+    />
     <div class="banner__wrapper">
       <h1 class="banner__title">
         Функциональное <br />
@@ -32,6 +37,7 @@ export default {
 <style lang="scss">
 .banner {
   position: relative;
+
   @media screen and (min-width: 0) {
     padding-top: 27px;
   }
@@ -45,15 +51,13 @@ export default {
   }
 
   @media screen and (min-width: $laptop-big) {
+    position: relative;
     display: flex;
     align-items: flex-start;
     margin: -110px 0 0;
     padding-top: 141px;
-    background: url(../assets/images/bg-desktop.jpg);
-    background-position: right 0;
-    background-repeat: no-repeat;
+    background: none;
     min-height: 696px;
-    z-index: -1;
   }
 
   &__wrapper {
@@ -62,7 +66,21 @@ export default {
     }
   }
 
-  &__bg-image {
+  &__bg-desc {
+    position: absolute;
+
+    @media screen and (min-width: 0) {
+      display: none;
+    }
+
+    @media screen and (min-width: $laptop-big) {
+      display: block;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  &__bg-mobile {
     @media screen and (min-width: 0) {
       position: absolute;
       top: 0;
@@ -132,6 +150,7 @@ export default {
   }
 
   &__image-desc {
+    z-index: 1;
     @media screen and (min-width: 0) {
       display: none;
     }

@@ -25,6 +25,7 @@ export default {
   position: relative;
   display: flex;
   align-items: center;
+
   @media screen and (min-width: 0) {
     margin: 14px 0 0;
   }
@@ -40,6 +41,7 @@ export default {
   &__label {
     text-transform: uppercase;
     color: #444444;
+
     @media screen and (min-width: 0) {
       margin: 0 10px 0 0;
       font-size: 16px;
@@ -56,6 +58,7 @@ export default {
     flex: 1;
     color: #444444;
     border: 1px solid #e7e7e7;
+
     @media screen and (min-width: 0) {
       padding: 13px 31px 13px 13px;
       font-size: 16px;
@@ -76,6 +79,7 @@ export default {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+
     @media screen and (min-width: 0) {
       right: 10px;
     }

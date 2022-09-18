@@ -134,9 +134,6 @@ export default {
       transform: translateY(-50%);
       z-index: -1;
     }
-
-    @media screen and (min-width: $laptop-big) {
-    }
   }
 
   &__body {

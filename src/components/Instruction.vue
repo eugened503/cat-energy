@@ -70,6 +70,7 @@ export default {
 
   &__title {
     color: $color-black;
+
     @media screen and (min-width: 0) {
       font-size: 36px;
       line-height: 40px;

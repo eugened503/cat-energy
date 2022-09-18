@@ -179,7 +179,7 @@
       </ul>
     </div>
     <div class="fields__footer">
-      <button class="button" type="submit">Отправить заявку</button>
+      <button class="button" type="button">Отправить заявку</button>
       <p class="fields__note">* — Обязательные поля</p>
     </div>
   </form>
@@ -349,6 +349,7 @@ export default {
 
   &__left-line {
     z-index: -2;
+
     @media screen and (min-width: 0) {
       display: none;
     }
@@ -365,6 +366,7 @@ export default {
 
   &__right-line {
     z-index: -1;
+
     @media screen and (min-width: 0) {
       right: -20px;
     }
@@ -382,6 +384,7 @@ export default {
     @media screen and (min-width: $laptop-big) {
       display: flex;
     }
+
     .field-block {
       @media screen and (min-width: $laptop-big) {
         flex: 1;
@@ -464,6 +467,7 @@ export default {
   min-height: 31px;
   display: flex;
   align-items: center;
+
   @media screen and (min-width: 0) {
     margin: 13px 0 0;
   }
@@ -479,6 +483,11 @@ export default {
   &__radio-input {
     opacity: 0;
     cursor: pointer;
+
+    &:hover + .list-item__radio-label:before {
+      border: 1px solid #444444;
+    }
+
     @media screen and (min-width: 0) {
       width: 31px;
       height: 31px;
@@ -497,6 +506,7 @@ export default {
     align-items: center;
     pointer-events: none;
     text-transform: uppercase;
+
     @media screen and (min-width: 0) {
       font-size: 16px;
       line-height: 18px;
@@ -513,6 +523,7 @@ export default {
     background-clip: content-box;
     border: 1px solid #cdcdcd;
     border-radius: 50%;
+    transition: border 0.3s ease;
     @media screen and (min-width: 0) {
       width: 13px;
       height: 13px;
@@ -535,6 +546,11 @@ export default {
   &__checkbox-input {
     opacity: 0;
     cursor: pointer;
+
+    &:hover + .list-item__checkbox-label:before {
+      border: 1px solid #444444;
+    }
+
     @media screen and (min-width: 0) {
       width: 32px;
       height: 32px;
@@ -560,6 +576,7 @@ export default {
     align-items: center;
     pointer-events: none;
     text-transform: uppercase;
+
     @media screen and (min-width: 0) {
       font-size: 16px;
       line-height: 18px;
@@ -575,6 +592,8 @@ export default {
     content: "";
     background-clip: content-box;
     border: 1px solid #cdcdcd;
+    transition: border 0.3s ease;
+
     @media screen and (min-width: 0) {
       width: 30px;
       height: 30px;

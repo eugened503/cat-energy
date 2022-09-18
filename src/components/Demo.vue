@@ -53,18 +53,20 @@
       </div>
     </div>
     <div name="list" class="demo__list">
-      <img
-        v-if="!checked"
-        class="demo__image"
-        src="../assets/images/before-mobile.png"
-        alt=""
-      />
-      <img
-        v-else
-        class="demo__image"
-        src="../assets/images/after-mobile@2x.png"
-        alt=""
-      />
+      <transition name="icon" mode="out-in">
+        <img
+          v-if="!checked"
+          class="demo__image"
+          src="../assets/images/before-mobile.png"
+          alt=""
+        />
+        <img
+          v-else
+          class="demo__image"
+          src="../assets/images/after-mobile@2x.png"
+          alt=""
+        />
+      </transition>
     </div>
     <div class="progress">
       <span class="progress-title">было</span>
@@ -99,6 +101,7 @@ export default {
 <style lang="scss">
 .demo {
   position: relative;
+
   @media screen and (min-width: 0) {
     padding-top: 27px;
     padding-bottom: 31px;
@@ -161,6 +164,9 @@ export default {
   }
 
   &__list-tab-wrapper {
+    position: relative;
+    z-index: 1;
+
     @media screen and (min-width: 0) {
       display: none;
     }
@@ -232,6 +238,10 @@ export default {
     background-color: #dcdcdc;
     cursor: pointer;
 
+    &:focus {
+      border: none;
+    }
+
     &::-webkit-slider-thumb {
       width: 34px;
       height: 34px;
@@ -268,7 +278,6 @@ export default {
     @media screen and (min-width: $tablet) {
       display: block;
       position: absolute;
-      z-index: -1;
       left: 0;
       bottom: 0;
       width: 100%;
@@ -501,6 +510,32 @@ export default {
 
   .slider.round:before {
     border-radius: 6px;
+  }
+}
+
+.icon-enter-active {
+  animation: iconIn 0.3s;
+}
+
+.icon-leave-active {
+  animation: iconOut 0.3s;
+}
+
+@keyframes iconIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes iconOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
 </style>
